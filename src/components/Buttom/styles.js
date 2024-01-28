@@ -9,7 +9,7 @@ export const ButtonContainer = styled.button `
 
 
     color: #ffffff;
-    padding: 2px 12px;
+    padding: 8px 12px;
     min-width: 120px;
     width: 100%;
     
@@ -23,10 +23,12 @@ export const ButtonContainer = styled.button `
 
 
         &::after {
-            content: '',
+            content: '';
             position: absolute;
             border: 1px solid #e4105d;
-            top: -5px;
+            top: -6px;
+            right: -6px;
+            bottom: -6px;
             left: -6px;
             width: calc(100% + 10px);
             height: calc(100% +10px);
