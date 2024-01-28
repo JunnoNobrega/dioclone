@@ -21,6 +21,9 @@ export const ButtonContainer = styled.button `
 
         background: #e4105d;
 
+        &:hover{
+            opacity:0.6;
+        }
 
         &::after {
             content: '';

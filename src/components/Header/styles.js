@@ -86,7 +86,7 @@ export const UserPicture = styled.img `
 
 `
 
-export const Input = styled.input `
+export const InputHeader = styled.input `
 
     background: transparent;
     flex: 1;

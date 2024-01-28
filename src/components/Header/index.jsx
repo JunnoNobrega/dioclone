@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {FindInputContainer,  Container, Input,Menu, MenuRight, Row,  Wraper } from './styles'
+import {FindInputContainer,  Container, InputHeader,Menu, MenuRight, Row,  Wraper } from './styles'
 import { Button } from '../Buttom'
 import logo from '../../assets/logo-dio.png'
 
@@ -12,7 +12,7 @@ const Header = () => {
             <Row>
                 <img src={logo} alt="Logo da Dio"/>
                 <FindInputContainer>
-                    <Input placeholder='Buscar ...'/>
+                    <InputHeader placeholder='Buscar ...'/>
                 </FindInputContainer>
                 <Menu>Live Code</Menu>
                 <Menu>Global</Menu>
