@@ -34,7 +34,7 @@ const Login  = () =>{
 
     const onSubmit = async FormData => {
         try {
-            const {data} = await api.get(`users?email=${FormData.email}&senha=${FormData.password}`);
+            const {data} = await api.get(`users?email=${FormData.email}&password=${FormData.password}`);
             console.log('retorno api', data)
             if(data.length ===1){
 

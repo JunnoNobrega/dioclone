@@ -35,13 +35,17 @@ const Register  = () =>{
 
     const onSubmit = async FormData => {
         try {
-            const {data} = await api.get(`users?email=${FormData.email}&senha=${FormData.password}`);
-            console.log('retorno api', data)
-            if(data.length ===1){
+            const {data} = await api.post('users',{
+                name: FormData.name,
+                email:FormData.email,
+                password: FormData.password,
+            });
+          
+            console.log(data)
+            if(data !== undefined){
+                alert("Usuário cadastrado com sucesso!")
+                navigate('/login')
 
-
-            }else {
-                alert("Email ou senha inválido.")
             }
         } catch  {
             alert("Houve um erro, tente novamente.")
