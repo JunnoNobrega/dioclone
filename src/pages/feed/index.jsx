@@ -1,10 +1,9 @@
-import {Link} from 'react-router-dom'
-import { Button } from '../../components/Buttom'
+
 import { Header } from '../../components/Header'
 import {Card} from '../../components/Card'
 import {UserInfo} from '../../components/UserInfo'
 
-import bannerImage from '../../assets/banner.png'
+
 
 import { Container, Column, Title, TitleHighlight } from './styles'
 
