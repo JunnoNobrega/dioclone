@@ -1,25 +1,25 @@
+# Segue as telas do projeto: 
 
-
-# Página Inicial: 
+## Página Inicial: 
 
 ![image](https://github.com/JunnoNobrega/dioclone/assets/53883884/1fde26c9-41c6-45c7-b58b-496377493480)
 
 
 
-# Página de Cadastro: 
+## Página de Cadastro: 
 
 ![image](https://github.com/JunnoNobrega/dioclone/assets/53883884/02be9ae7-4b2a-43e0-9f2b-efe4e2b1283f)
 
-# Página de Login: 
+## Página de Login: 
 
 ![image](https://github.com/JunnoNobrega/dioclone/assets/53883884/103a056a-7243-43ca-9d8e-995fe342bb56)
 
-# Página Feed: 
+## Página Feed: 
 
 ![image](https://github.com/JunnoNobrega/dioclone/assets/53883884/010db113-0cd3-41dc-9f7f-6f4132759f49)
 
 
-# Como executar o projeto: 
+## Como executar o projeto: 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
