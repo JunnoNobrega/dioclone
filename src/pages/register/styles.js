@@ -82,27 +82,22 @@ export const EsqueciText = styled.p `
     font-size: 14px;
     line-height: 19px;
 
-    color: #e5e044
+    color: #e5e044;
 
     
 `
-
-export const CriarText = styled.p `
-
+export const JaCadastrado = styled.p `
     font-family: "Open Sans";
-    font-style: normal;
+    font-style: bold;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
 
-    
-
-    a {
-        color: #e23dd7;
+    a{
+        color: #23DD7A;
         text-decoration: none;
     }
+
 `
-
-
 
 

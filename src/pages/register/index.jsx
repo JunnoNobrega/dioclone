@@ -1,4 +1,4 @@
-import {MdEmail, MdLock} from 'react-icons/md'
+import {MdEmail, MdLock, MdAccountBox } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -12,15 +12,16 @@ import { Input } from '../../components/Input'
 
 
 
-import {Column,Container,CriarText,EsqueciText ,Row,SubTitleLogin,Title,TitleLogin,Wraper} from './styles'
+import {Column, Container, Row, SubTitleLogin, Title, TitleLogin, Wraper, JaCadastrado} from './styles'
 
 const schema = yup.object({
     email: yup.string().email("email não é válido").required("Campo obrigatório"),
-    password: yup.string().min(3, "No minimo 3 characteres").required("Campo obrigatório")
+    password: yup.string().min(3, "No minimo 3 characteres").required("Campo obrigatório"),
+    name: yup.string().min(3, "O nome deve ter no mínimo 3 characteres").required("Campo obrigatório"),
 })
 
 
-const Login  = () =>{
+const Register  = () =>{
 
     const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ const Login  = () =>{
             console.log('retorno api', data)
             if(data.length ===1){
 
-                handleClickSignin();
+
             }else {
                 alert("Email ou senha inválido.")
             }
@@ -47,9 +48,7 @@ const Login  = () =>{
         }
     }
 
-    const handleClickSignin = () =>{
-        navigate('/feed')
-    }
+  
 
 
 
@@ -67,28 +66,36 @@ const Login  = () =>{
                 </Column>
                 <Column>
                     <Wraper>
-                        <TitleLogin>Faça seu cadastro</TitleLogin>
+                        <TitleLogin>Comece agora grátis</TitleLogin>
                         
-                        <SubTitleLogin>Já cadastrado? Faça seu login e make the change!</SubTitleLogin>
+                        <SubTitleLogin>Cire sua conta e make the change!</SubTitleLogin>
                         <form onSubmit={handleSubmit(onSubmit)}>
+                            <Input name="name" 
+                                control={control} 
+                                errorText={errors?.name?.message}  
+                                placeholder="Nome completo" 
+                                leftIcon={<MdAccountBox size={25} color="#8647AD"/>}/>
                             <Input name="email" 
                                 control={control} 
                                 errorText={errors?.email?.message}  
                                 placeholder="E-mail" 
-                                leftIcon={<MdEmail size={25}/>}/>
+                                leftIcon={<MdEmail size={25} color="#8647AD"/>}/>
                             <Input  
                                 name="password" 
                                 control={control}  
                                 errorText={errors?.password?.message}
                                 placeholder="Senha" 
                                 type="password" 
-                                leftIcon={<MdLock size={25}/>}/>
-                                <Button title="Entrar" variant="secundary"  type="submit"/>
+                                leftIcon={<MdLock size={25} color="#8647AD"/>}/>
+                                <Button title="Criar minha conta" variant="secundary"  type="submit"/>
                         </form>
                         <Row>
-                            <EsqueciText>Esqueci minha senha</EsqueciText>
-                            <CriarText> <Link to='/register'>Cirar Conta</Link> </CriarText>
+                            <SubTitleLogin>Ao clicar em "criar minha conta grátis", declaro que aceito as Políticas de Privacidade e os Termos de Uso da DIO.</SubTitleLogin>
                         </Row>
+
+                            <JaCadastrado>já tenho conta. <Link to='/login'>Fazer login</Link> </JaCadastrado>
+                            
+                       
                     </Wraper>
                 </Column>
             </Container>
@@ -98,4 +105,4 @@ const Login  = () =>{
     )
 }
 
-export {Login}
+export {Register}
