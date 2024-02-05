@@ -5,9 +5,10 @@ import { Link, useLocation } from 'react-router-dom'
 import {FindInputContainer,  Container, InputHeader,Menu, MenuRight, Row,  Wraper, UserPicture } from './styles'
 import { Button } from '../Buttom'
 import logo from '../../assets/logo-dio.png'
+import { IHeader } from './types'
 
 
-const Header = ({autenticado}) => {
+const Header = ({autenticado}:IHeader) => {
 
     const location = useLocation();
 

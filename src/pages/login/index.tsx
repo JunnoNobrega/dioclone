@@ -13,6 +13,7 @@ import { Input } from '../../components/Input'
 
 
 import {Column,Container,CriarText,EsqueciText ,Row,SubTitleLogin,Title,TitleLogin,Wraper} from './styles'
+import { IFormData } from './types';
 
 const schema = yup.object({
     email: yup.string().email("email não é válido").required("Campo obrigatório"),
@@ -24,7 +25,7 @@ const Login  = () =>{
 
     const navigate = useNavigate();
 
-    const { control, handleSubmit,  formState: { errors, isValid} } = useForm({
+    const { control, handleSubmit,  formState: { errors, isValid} } = useForm<IFormData>({
         resolver: yupResolver(schema),
         mode: 'onChange',
 
@@ -32,7 +33,7 @@ const Login  = () =>{
 
     console.log(isValid, errors)
 
-    const onSubmit = async FormData => {
+    const onSubmit = async (FormData: IFormData) => {
         try {
             const {data} = await api.get(`users?email=${FormData.email}&password=${FormData.password}`);
             console.log('retorno api', data)

@@ -2,7 +2,9 @@
 
 import {IconContainer,InputText, InputContainer, ErrorText } from './styles'
 import { Controller } from 'react-hook-form'
-const Input = ({leftIcon, name,control,errorText,  ...rest}) => {
+import { IInput } from './types'
+
+const Input = ({leftIcon, name,control,errorText,  ...rest}: IInput) => {
   return (
     <>
         <InputContainer>
@@ -16,7 +18,7 @@ const Input = ({leftIcon, name,control,errorText,  ...rest}) => {
         </InputContainer>
         {errorText ? <ErrorText>{errorText}</ErrorText> : null}
     
-    </>
+    </> 
   )
 }
 

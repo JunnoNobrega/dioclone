@@ -13,6 +13,7 @@ import { Input } from '../../components/Input'
 
 
 import {Column, Container, Row, SubTitleLogin, Title, TitleLogin, Wraper, JaCadastrado} from './styles'
+import { IRegiterFormData } from './types';
 
 const schema = yup.object({
     email: yup.string().email("email não é válido").required("Campo obrigatório"),
@@ -25,7 +26,7 @@ const Register  = () =>{
 
     const navigate = useNavigate();
 
-    const { control, handleSubmit,  formState: { errors, isValid} } = useForm({
+    const { control, handleSubmit,  formState: { errors, isValid} } = useForm<IRegiterFormData>({
         resolver: yupResolver(schema),
         mode: 'onChange',
 
@@ -33,7 +34,7 @@ const Register  = () =>{
 
     console.log(isValid, errors)
 
-    const onSubmit = async FormData => {
+    const onSubmit = async (FormData:IRegiterFormData) => {
         try {
             const {data} = await api.post('users',{
                 name: FormData.name,
