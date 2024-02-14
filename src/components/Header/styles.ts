@@ -19,6 +19,11 @@ export const Row = styled.div`
     flex-direction: row;
     align-items: center;
 
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
 `
 
 export const Column = styled.div`
@@ -80,8 +85,12 @@ export const UserPicture = styled.img `
 
     width: 32px;
     height: 32px;
+    margin-right: 12px; 
     border-radius: 22px;
     border: 2px solid #ffffff;
+
+  
+     
 
 
 `

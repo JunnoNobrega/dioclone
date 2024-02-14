@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { Link, useLocation } from 'react-router-dom'
 
 import {FindInputContainer,  Container, InputHeader,Menu, MenuRight, Row,  Wraper, UserPicture } from './styles'
 import { Button } from '../Buttom'
 import logo from '../../assets/logo-dio.png'
-import { IHeader } from './types'
+import { AuthContext } from '../../context/auth'
 
 
-const Header = ({autenticado}:IHeader) => {
 
+const Header = () => {
+
+    const {user, handleSignOut} = useContext(AuthContext);
     const location = useLocation();
 
    const isHomePage = location.pathname === '/';
@@ -21,7 +23,7 @@ const Header = ({autenticado}:IHeader) => {
                 <Link to="/">
                      <img src={logo} alt="Logo da Dio"/>
                 </Link>
-                {autenticado ? (
+                {user.id ? (
                     <>
                         <FindInputContainer>
                             <InputHeader placeholder='Buscar ...'/>
@@ -33,10 +35,11 @@ const Header = ({autenticado}:IHeader) => {
                 ) : null}
             </Row>
             <Row>
-                {autenticado ? (
+                {user.id ? (
                     <>
                     
                         <UserPicture src="https://avatars.githubusercontent.com/u/53883884?v=4"/>
+                        <Link to="/" onClick={handleSignOut}>Sair</Link>
                     
                   
                 
