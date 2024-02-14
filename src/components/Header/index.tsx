@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
+
 
 import { Link, useLocation } from 'react-router-dom'
 
 import {FindInputContainer,  Container, InputHeader,Menu, MenuRight, Row,  Wraper, UserPicture } from './styles'
 import { Button } from '../Buttom'
 import logo from '../../assets/logo-dio.png'
-import { AuthContext } from '../../context/auth'
+import { useAuth } from '../../hooks/useAuth'
 
 
 
 const Header = () => {
 
-    const {user, handleSignOut} = useContext(AuthContext);
+    const {user, handleSignOut} = useAuth();
     const location = useLocation();
 
    const isHomePage = location.pathname === '/';
